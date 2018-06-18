@@ -1,2 +1,3 @@
 # backup-nextcloud
-Backup pour Nextcloud CMD Debian et Ubuntu
+Script pour sauvegarder vos serveur Linux
+
