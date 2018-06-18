@@ -6,12 +6,12 @@
 #  ____) | |_| | | | | | | | (_) \__ \ |_| | | | | (_| |  __/ |   
 # |_____/ \__, |_| |_|_| |_|\___/|___/\__|_|_| |_|\__, |\___|_|   
 #          __/ |    Dev par Bastien LANGUEDOC      __/ |          
-#         |___/     Pour la société Sitescom      |___/     
-#						NE PAS TOUCHER !
+#         |___/                                   |___/     
+#						         NE PAS TOUCHER !
 #Fichier config
 source /script/config/*.cfg
 source /script/config/clients-enable/clientnanme.cfg
-#Vérification des logiciels		
+#VÃ©rification des logiciels		
 echo "Check des logiciels obligatoires"
 dpkg -p "sshfs" > /dev/null 2>&1
 dpkg -p "toilet" > /dev/null 2>&1
@@ -23,7 +23,7 @@ else
 echo "fin"
 fi	
 clear
-#Ascii écriture shell	
+#Ascii Ã©criture shell	
 $NAME
 #Connexion SSHFS
 sshfs $ip_oscar:/$mountoscar $folder1/$username/$folderlocal
