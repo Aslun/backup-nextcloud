@@ -3,11 +3,11 @@
 ## Introduction
 
 Système de backup client Nextcloud, il permet de sauvegarder vos données sur des
-serveur Linux avec l'options SSHFS, pratique pour des entreprises
+serveurs Linux avec l'options SSHFS, pratique pour des entreprises
 
 ## Requirements
 
-Disponibles sur Debian, Ubuntu & dérivé.
+Disponible sur Debian, Ubuntu & dérivé.
 
 ## Installation
 
