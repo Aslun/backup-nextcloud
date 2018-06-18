@@ -6,7 +6,7 @@
 #  ____) | |_| | | | | | | | (_) \__ \ |_| | | | | (_| |  __/ |   
 # |_____/ \__, |_| |_|_| |_|\___/|___/\__|_|_| |_|\__, |\___|_|   
 #          __/ |    Dev par Bastien LANGUEDOC      __/ |          
-#         |___/     Pour la société Sitescom      |___/     
+#         |___/         						              |___/     
 #	
 #Fichier config
 source /script/config/*.cfg
@@ -22,24 +22,24 @@ else
 echo "fin"
 fi	
 clear
-#Ascii écriture shell	
+#Ascii Ã©criture shell	
 toilet Sitescom
-#Question / Réponse
+#Question / RÃ©ponse
 echo -n "Nom de l'entreprise "
 read clientname
 #Create fichier du fichier
-cp -R /script/config/.defaultclient.cfg /script/config/clients-enable/$clientname.cfg
+touch /script/config/clients-enable/$clientname.cfg
 #Config
-sed -i 's/Client/'$clientname'/g' /script/config/clients-enable/$clientname.cfg
-echo \n folder1=''/home/oscar'' >> /script/config/clients-enable/$clientname.cfg
+echo Client='"'$clientname'"' >> /script/config/clients-enable/$clientname.cfg
+echo folder1=' '/home/oscar' ' >> /script/config/clients-enable/$clientname.cfg
 ###########################################################################
 echo -n "Nom d'utilisateur Oscardrive "
 read username_oscar
-echo \n username=''$username_oscar'' >> /script/config/clients-enable/$clientname.cfg
-#Création du fichier
+echo username='"'$username_oscar'"' >> /script/config/clients-enable/$clientname.cfg
+#CrÃ©ation du fichier
 ls /home/oscar/ > /dev/null 2>&1
 if [ $? != 0 ]; then
-#Création du fichier
+#CrÃ©ation du fichier
 mkdir /home/oscar/$username_oscar
 else
 #fichier ok
@@ -48,21 +48,27 @@ fi
 ###########################################################################
 echo -n "Key API "
 read api_key
-echo \n password=''$api_key'' >> /script/config/clients-enable/$clientname.cfg
+echo password='"'$api_key'"' >> /script/config/clients-enable/$clientname.cfg
 ###########################################################################
 echo -n "URL du drive HTTPS :  "
 read urldrive
-echo \n URL=''$urldrive'' >> /script/config/clients-enable/$clientname.cfg
+echo URL='"'$urldrive'"' >> /script/config/clients-enable/$clientname.cfg
 ###########################################################################
 echo -n "Point de montage de l'oscar /mnt/example:  "
 read mount
-echo \n mountoscar=''$mount'' >> /script/config/clients-enable/$clientname.cfg
+echo mountoscar='"'$mount'"' >> /script/config/clients-enable/$clientname.cfg
 ###########################################################################
 echo -n "nom du dossier example sage :  "
 read folderoscar
-echo \n folderlocal=''$folderoscar'' >> /script/config/clients-enable/$clientname.cfg
+echo folderlocal='"'$folderoscar'"' >> /script/config/clients-enable/$clientname.cfg
 ###########################################################################
 cp -R /script/scriptshell/default.sh  /script/scriptshell/$clientname.sh
 sed -i 's/clientnanme/'$clientname'/g' /script/scriptshell/$clientname.sh
+
+###########################################################################
+echo -n "IP du serveur "
+read ipserver
+echo ip_oscar='"'$ipserver'"' >> /script/config/clients-enable/$clientname.cfg
+
 echo Success pour le client $clientname 
 exit
