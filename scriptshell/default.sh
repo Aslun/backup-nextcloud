@@ -28,7 +28,7 @@ $NAME
 #Connexion SSHFS
 sshfs $ip_oscar:/$mountoscar $folder1/$username/$folderlocal
 #Synchro
-nextcloudcmd  -u "$username" -p "$password" $folder1/$username/ https://$URL/remote.php/webdav/
+nextcloudcmd  -u "$username" -p "$password" $folder1/$username/ $URL/remote.php/webdav/
 echo "-------------------------------------"
 echo " Fin du listing des fichiers "
 echo "-------------------------------------"
